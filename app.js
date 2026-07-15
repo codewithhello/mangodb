@@ -1,12 +1,13 @@
 
 require('dotenv').config()
+const cors = require("cors");
 const express = require('express');
 const mongodbConnect = require('./database');
 const Product = require('./model/productModel');
 
 const app = express();
-app.use(express.json())
-
+app.use(cors());
+app.use(express.json());
 mongodbConnect()
 
 // get all data 
